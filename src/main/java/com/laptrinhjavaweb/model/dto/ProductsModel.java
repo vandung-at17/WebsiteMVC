@@ -28,4 +28,5 @@ public class ProductsModel {
 	private List<ColorsEntity> colorsEntities = new ArrayList<>();
 	private Date createdDate;
 	private Date modifiedDate;
+	private String img;
 }

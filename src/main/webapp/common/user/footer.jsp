@@ -9,27 +9,27 @@ Clients
 		<div class="row">
 			<div class="span2">
 				<!-- <a href="#"><img alt="" src="assets/img/1.png"></a> -->
-				<a href="#"><img alt="" src="<c:url value='template/user/assets/img/1.png'/>"></a>
+				<a href="#"><img alt="" src="<c:url value='/template/user/assets/img/1.png'/>"></a>
 			</div>
 			<div class="span2">
 				<!-- <a href="#"><img alt="" src="assets/img/2.png"></a> -->
-				<a href="#"><img alt="" src="<c:url value='template/user/assets/img/2.png'/>"></a>
+				<a href="#"><img alt="" src="<c:url value='/template/user/assets/img/2.png'/>"></a>
 			</div>
 			<div class="span2">
 				<!-- <a href="#"><img alt="" src="assets/img/3.png"></a> -->
-				<a href="#"><img alt="" src="<c:url value='template/user/assets/img/3.png'/>"></a>
+				<a href="#"><img alt="" src="<c:url value='/template/user/assets/img/3.png'/>"></a>
 			</div>
 			<div class="span2">
 				<!-- <a href="#"><img alt="" src="assets/img/4.png"></a> -->
-				<a href="#"><img alt="" src="<c:url value='template/user/assets/img/4.png'/>"></a>
+				<a href="#"><img alt="" src="<c:url value='/template/user/assets/img/4.png'/>"></a>
 			</div>
 			<div class="span2">
 				<!-- <a href="#"><img alt="" src="assets/img/5.png"></a> -->
-				<a href="#"><img alt="" src="<c:url value='template/user/assets/img/5.png'/>"></a>
+				<a href="#"><img alt="" src="<c:url value='/template/user/assets/img/5.png'/>"></a>
 			</div>
 			<div class="span2">
 				<!-- <a href="#"><img alt="" src="assets/img/6.png"></a> -->
-				<a href="#"><img alt="" src="<c:url value='template/user/assets/img/6.png'/>"></a>
+				<a href="#"><img alt="" src="<c:url value='/template/user/assets/img/6.png'/>"></a>
 			</div>
 		</div>
 	</section>
@@ -78,15 +78,15 @@ Footer
 		<div class="container">
 			<p class="pull-right">
 				<!-- <a href="#"><img src="assets/img/maestro.png" alt="payment"></a> -->
-				<a href="#"><img src="<c:url value='template/user/assets/img/maestro.png'/>" alt="payment"></a>
+				<a href="#"><img src="<c:url value='/template/user/assets/img/maestro.png'/>" alt="payment"></a>
 				<!-- <a href="#"><img src="assets/img/mc.png" alt="payment"></a> -->
-				<a href="#"><img src="<c:url value='template/user/assets/img/mc.png'/>" alt="payment"></a>
+				<a href="#"><img src="<c:url value='/template/user/assets/img/mc.png'/>" alt="payment"></a>
 				<!-- <a href="#"><img src="assets/img/pp.png" alt="payment"></a> -->
-				<a href="#"><img src="<c:url value='template/user/assets/img/pp.png'/>" alt="payment"></a>
+				<a href="#"><img src="<c:url value='/template/user/assets/img/pp.png'/>" alt="payment"></a>
 				<!-- <a href="#"><img src="assets/img/visa.png" alt="payment"></a> -->
-				<a href="#"><img src="<c:url value='template/user/assets/img/visa.png'/>" alt="payment"></a>
+				<a href="#"><img src="<c:url value='/template/user/assets/img/visa.png'/>" alt="payment"></a>
 				<!-- <a href="#"><img src="assets/img/disc.png" alt="payment"></a> -->
-				<a href="#"><img src="<c:url value='template/user/assets/img/disc.png'/>" alt="payment"></a>
+				<a href="#"><img src="<c:url value='/template/user/assets/img/disc.png'/>" alt="payment"></a>
 			</p>
 			<span>Copyright &copy; 2023<br> bootstrap ecommerce shopping template</span>
 		</div>

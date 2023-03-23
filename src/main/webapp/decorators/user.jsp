@@ -8,9 +8,13 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content="">
             <meta name="author" content="">
+            <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script> -->
             <!-- Bootstrap styles assets/css/bootstrap.css -->
             <!-- <link href="assets/css/bootstrap.css" rel="stylesheet"/> -->
 			<link href="<c:url value='/template/user/assets/css/bootstrap.css'/>" rel="stylesheet" />
+			<link href="<c:url value='/template/user/assets/css/bootstrap.min.css'/>" rel="stylesheet" />
             <!-- Customize styles -->
             <!-- <link href="style.css" rel="stylesheet"/> -->
             <link href="<c:url value='/template/style.css'/>" rel="stylesheet" />
@@ -38,18 +42,18 @@
             <dec:body />
 
             <%@include file="/common/user/footer.jsp" %>
-
+			
+					<script src="<c:url value='/template/user/paging/jquery.twbsPagination.js' />"></script>
                     <!-- Placed at the end of the document so the pages load faster -->
                     <!-- <script src="assets/js/jquery.js"></script> -->
-                    <script src="<c:url value='template/user/assets/js/jquery.js'/>"></script>
+                    <script src="<c:url value='/template/user/assets/js/jquery.js'/>"></script>
                     <!-- <script src="assets/js/bootstrap.min.js"></script> -->
-                    <script src="<c:url value='template/user/assets/js/bootstrap.min.js'/>"></script>
+                    <script src="<c:url value='/template/user/assets/js/bootstrap.min.js'/>"></script>
                     <!-- <script src="assets/js/jquery.easing-1.3.min.js"></script> -->
-                    <script src="<c:url value='template/user/assets/js/jquery.easing-1.3.min.js'/>"></script>
+                    <script src="<c:url value='/template/user/assets/js/jquery.easing-1.3.min.js'/>"></script>
                     <!-- <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script> -->
-                    <script src="<c:url value='template/user/assets/js/jquery.scrollTo-1.4.3.1-min.js'/>"></script>
+                    <script src="<c:url value='/template/user/assets/js/jquery.scrollTo-1.4.3.1-min.js'/>"></script>
                     <!-- <script src="assets/js/shop.js"></script> -->
-                    <script src="<c:url value='template/user/assets/js/shop.js'/>"></script>
+                    <script src="<c:url value='/template/user/assets/js/shop.js'/>"></script>
         </body>
-
         </html>

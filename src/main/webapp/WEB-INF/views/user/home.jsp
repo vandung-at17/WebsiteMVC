@@ -33,9 +33,12 @@
 						only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
 					</p>
 				</div>
-				<div class="well well-small"><a href="#"><img src="assets/img/paypal.jpg"
-							alt="payment method paypal"></a></div>
-
+				<div class="well well-small">
+					<a href="#">
+					<!-- <img src="assets/img/paypal.jpg" alt="payment method paypal"> -->
+					<img src="<c:url value='/template/user/assets/img/paypal.jpg'/>" alt="payment method paypal">
+					</a>
+				</div>
 				<a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
 				<br>
 				<br>
@@ -45,7 +48,7 @@
 							<a class="zoomTool" href="product_details.html" title="add to cart"><span
 									class="icon-search"></span> QUICK VIEW</a>
 							<!-- <img src="assets/img/bootstrap-ecommerce-templates.png" alt="bootstrap ecommerce templates"> -->
-							<img src="<c:url value='template/user/assets/img/bootstrap-ecommerce-templates.png'/>" alt="bootstrap ecommerce templates">
+							<img src="<c:url value='/template/user/assets/img/bootstrap-ecommerce-templates.PNG'/>" alt="bootstrap ecommerce templates">
 							<div class="caption">
 								<h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span
 										class="pull-right">$22.00</span></h4>
@@ -57,7 +60,8 @@
 						<div class="thumbnail">
 							<a class="zoomTool" href="product_details.html" title="add to cart"><span
 									class="icon-search"></span> QUICK VIEW</a>
-							<img src="assets/img/shopping-cart-template.png" alt="shopping cart template">
+							<!-- <img src="/assets/img/shopping-cart-template.png" alt="shopping cart template"> -->
+							<img src="<c:url value='/template/user/assets/img/shopping-cart-template.PNG'/>" alt="shopping cart template">
 							<div class="caption">
 								<h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span
 										class="pull-right">$22.00</span></h4>
@@ -69,7 +73,8 @@
 						<div class="thumbnail">
 							<a class="zoomTool" href="product_details.html" title="add to cart"><span
 									class="icon-search"></span> QUICK VIEW</a>
-							<img src="assets/img/bootstrap-template.png" alt="bootstrap template">
+							<!-- <img src="/assets/img/bootstrap-template.png" alt="bootstrap template"> -->
+							<img src="<c:url value='/template/user/assets/img/bootstrap-template.png'/>" alt="bootstrap template">
 							<div class="caption">
 								<h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span
 										class="pull-right">$22.00</span></h4>
@@ -91,7 +96,7 @@
 									<div class="item">
 								</c:if>
 								<!-- <img style="width:100%" src="assets/img/bootstrap_free-ecommerce.png" alt="bootstrap ecommerce templates"> -->
-								<img style="width:100%" src="<c:url value='template/user/assets/img/${item.img}'/>" alt="bootstrap ecommerce templates">
+								<img style="width:100%" src="<c:url value='/template/user/assets/img/${item.img}'/>" alt="bootstrap ecommerce templates">
 								<div class="carousel-caption">
 									<h4>${item.caption}</h4>
 									<p><span>${item.content}</span></p>
@@ -120,7 +125,7 @@ New Products
 													title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 												<a href="#" class="tag"></a>
 												<!-- <a href="product_details.html"><img src="assets/img/bootstrap-ring.png" alt="bootstrap-ring"></a> -->
-												<a href="product_details.html"><img src="<c:url value='template/user/assets/img/bootstrap-ring.png'/>" alt="bootstrap-ring"></a>
+												<a href="product_details.html"><img src="<c:url value='/template/user/assets/img/bootstrap-ring.png'/>" alt="bootstrap-ring"></a>
 											</div>
 										</li>
 										<li class="span3">
@@ -129,7 +134,7 @@ New Products
 													title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 												<a href="#" class="tag"></a>
 												<!-- <a href="product_details.html"><img src="assets/img/i.jpg" alt=""></a> -->
-												<a href="product_details.html"><img src="<c:url value='template/user/assets/img/i.jpg'/>" alt=""></a>
+												<a href="product_details.html"><img src="<c:url value='/template/user/assets/img/i.jpg'/>" alt=""></a>
 											</div>
 										</li>
 										<li class="span3">
@@ -138,7 +143,7 @@ New Products
 													title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 												<a href="#" class="tag"></a>
 												<!-- <a href="product_details.html"><img src="assets/img/g.jpg" alt=""></a> -->
-												<a href="product_details.html"><img src="<c:url value='template/user/assets/img/g.jpg'/>" alt=""></a>
+												<a href="product_details.html"><img src="<c:url value='/template/user/assets/img/g.jpg'/>" alt=""></a>
 											</div>
 										</li>
 										<li class="span3">
@@ -146,7 +151,7 @@ New Products
 												<a class="zoomTool" href="product_details.html"
 													title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 												<!-- <a href="product_details.html"><img src="assets/img/s.png" alt=""></a> -->
-												<a href="product_details.html"><img src="<c:url value='template/user/assets/img/s.png'/>" alt=""></a>
+												<a href="product_details.html"><img src="<c:url value='/template/user/assets/img/s.png'/>" alt=""></a>
 											</div>
 										</li>
 									</ul>
@@ -158,7 +163,7 @@ New Products
 												<a class="zoomTool" href="product_details.html"
 													title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 												<!-- <a href="product_details.html"><img src="assets/img/i.jpg" alt=""></a> -->
-												<a href="product_details.html"><img src="<c:url value='template/user/assets/img/i.jpg'/>" alt=""></a>
+												<a href="product_details.html"><img src="<c:url value='/template/user/assets/img/i.jpg'/>" alt=""></a>
 											</div>
 										</li>
 										<li class="span3">
@@ -166,7 +171,7 @@ New Products
 												<a class="zoomTool" href="product_details.html"
 													title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 												<!-- <a href="product_details.html"><img src="assets/img/f.jpg" alt=""></a> -->
-												<a href="product_details.html"><img src="<c:url value='template/user/assets/img/f.jpg'/>" alt=""></a>
+												<a href="product_details.html"><img src="<c:url value='/template/user/assets/img/f.jpg'/>" alt=""></a>
 											</div>
 										</li>
 										<li class="span3">
@@ -174,7 +179,7 @@ New Products
 												<a class="zoomTool" href="product_details.html"
 													title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 												<!-- <a href="product_details.html"><img src="assets/img/h.jpg" alt=""></a> -->
-												<a href="product_details.html"><img src="<c:url value='template/user/assets/img/h.jpg'/>" alt=""></a>
+												<a href="product_details.html"><img src="<c:url value='/template/user/assets/img/h.jpg'/>" alt=""></a>
 											</div>
 										</li>
 										<li class="span3">
@@ -182,7 +187,7 @@ New Products
 												<a class="zoomTool" href="product_details.html"
 													title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 												<!-- <a href="product_details.html"><img src="assets/img/j.jpg" alt=""></a> -->
-												<a href="product_details.html"><img src="<c:url value='template/user/assets/img/j.jpg'/>" alt=""></a>
+												<a href="product_details.html"><img src="<c:url value='/template/user/assets/img/j.jpg'/>" alt=""></a>
 											</div>
 										</li>
 									</ul>
@@ -264,7 +269,7 @@ New Products
 								<li class="span4">
 									<div class="thumbnail">
 										<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-										<a href="chi-tiet-san-pham/${item.id_product}"><img src="<c:url value='template/user/assets/img/${item.img}'/>" alt=""></a>
+										<a href="chi-tiet-san-pham/${item.id_product}"><img src="<c:url value='/template/user/assets/img/${item.img}'/>" alt=""></a>
 										<div class="caption">
 											<!-- <h5>Manicure & Pedicure</h5> -->
 											<h5>${item.name}</h5>
@@ -273,7 +278,7 @@ New Products
 													title="Click to view"><span class="icon-zoom-in"></span></a>
 												<a class="shopBtn" href="#" title="add to cart"><span
 														class="icon-plus"></span></a>
-												<span class="pull-right"><fmt:formatNumber type="number" groupingUsed="true" value="${item.price}" />₫</span>
+												<span class="pull-right"><fmt:formatNumber type="number" groupingUsed="true" value="${item.price}"/>₫</span>
 											</h4>
 										</div>
 									</div>

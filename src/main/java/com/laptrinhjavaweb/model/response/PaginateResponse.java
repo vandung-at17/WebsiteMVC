@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PaginateResponse {
-	private Integer page;
-	private Integer totalPage;
+	private int page;//currentPage
+	private Integer totalPage;// Tổng số Page
+	private int start;
+	private int end;
 }
