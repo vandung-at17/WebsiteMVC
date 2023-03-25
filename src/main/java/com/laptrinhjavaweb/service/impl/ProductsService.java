@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.laptrinhjavaweb.converter.ProductsConverter;
 import com.laptrinhjavaweb.entity.ColorsEntity;
@@ -98,6 +99,9 @@ public class ProductsService implements IProductsService{
 		// TODO Auto-generated method stub
 		ProductsEntity productsEntity = productsRepository.findOneById(id);
 		ProductsModel productsModel = productsConverter.toModel(productsEntity);
+		ColorsEntity colorsEntity = productsEntity.getColorsEntities().get(0);
+		productsModel.setImg(colorsEntity.getImg());
+		productsModel.setColor(colorsEntity.getCode());
 		return productsModel;
 	}
 
@@ -108,5 +112,4 @@ public class ProductsService implements IProductsService{
 		List<ProductsEntity> productsEntities = productsRepository.findByCategoryEntity_Id(id);
 		return productsModels;
 	}
-	
 }

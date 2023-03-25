@@ -123,7 +123,7 @@ Body Section
 							<h3>${product.name}</h3>
 							<hr class="soft" />
 
-							<form class="form-horizontal qtyFrm">
+							<form class="form-horizontal qtyFrm" method="get" action="<c:url value="/AddCart/${product.id}"/>">
 								<div class="control-group">
 									<label class="control-label"><span><fmt:formatNumber type="number" groupingUsed="true" value="${product.price}"/>₫</span></label>
 									<div class="controls">
@@ -144,8 +144,7 @@ Body Section
 								</div>
 								<h4>100 items in stock</h4>
 								<p>${product.title}<p>
-									<button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add
-										to cart</button>
+									<button type="submit" class="shopBtn"><span class=" icon-shopping-cart" title="Add to cart"></span>Thêm vào giỏ hàng</button>
 							</form>
 						</div>
 					</div>

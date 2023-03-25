@@ -13,5 +13,7 @@ public interface IProductsService {
 	List<ProductsModel> getProductsByIdCategory(Long id);
 	List<ProductsModel> findProductOfCategory (long id , Pageable pageable);
 	int getTotalItem(long id);
+	//
 	public ProductsModel getProductByID (long id);
+	
 }

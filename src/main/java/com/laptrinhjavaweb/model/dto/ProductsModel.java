@@ -29,4 +29,5 @@ public class ProductsModel {
 	private Date createdDate;
 	private Date modifiedDate;
 	private String img;
+	private String color;
 }

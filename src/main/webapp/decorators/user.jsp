@@ -55,5 +55,7 @@
                     <script src="<c:url value='/template/user/assets/js/jquery.scrollTo-1.4.3.1-min.js'/>"></script>
                     <!-- <script src="assets/js/shop.js"></script> -->
                     <script src="<c:url value='/template/user/assets/js/shop.js'/>"></script>
+                    
+                    <dec:getProperty property="page.script"></dec:getProperty>
         </body>
         </html>

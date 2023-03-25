@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
 	<!-- 
 	Upper Header Section 
@@ -16,8 +17,8 @@
 						<a href="#"><span class="icon-user"></span> My Account</a>
 						<a href="register.html"><span class="icon-edit"></span> Free Register </a>
 						<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-						<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span
-								class="badge badge-warning"> $448.42</span></a>
+						<a href="<c:url value="/gio-hang"/>"><span class="icon-shopping-cart"></span> ${TotalQuantyCart} Item(s) - <span
+								class="badge badge-warning"><fmt:formatNumber type="number" groupingUsed="true" value="${TotalPriceCart}"/>₫</span></a>
 					</div>
 				</div>
 			</div>
@@ -48,8 +49,9 @@ Lower Header Section
 					</div>
 					<div class="span4 alignR">
 						<p><br> <strong> Support (24/7) : 0800 1234 678 </strong><br><br></p>
-						<span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
-						<span class="btn btn-warning btn-mini">$</span>
+						<span class="btn btn-mini">[ ${TotalQuantyCart} ] <span class="icon-shopping-cart"></span></span>
+						<span class="btn btn-warning btn-mini">đ</span>
+						<span class="btn btn-mini">$</span>
 						<span class="btn btn-mini">&pound;</span>
 						<span class="btn btn-mini">&euro;</span>
 					</div>

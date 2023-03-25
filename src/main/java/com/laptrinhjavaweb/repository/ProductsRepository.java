@@ -29,4 +29,5 @@ public interface ProductsRepository extends JpaRepository<ProductsEntity, Long>,
 	ProductsEntity findOneById(long id);
 	
 	List<ProductsEntity> findByCategoryEntity_Id(long idcategory);
+	
 }
