@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.laptrinhjavaweb.converter.MenusConverter;
 import com.laptrinhjavaweb.entity.MenusEntity;
-import com.laptrinhjavaweb.model.dto.MenusModel;
+import com.laptrinhjavaweb.model.dto.MenusDto;
 import com.laptrinhjavaweb.repository.MenusRepository;
 import com.laptrinhjavaweb.service.IMenusService;
 
@@ -22,12 +22,12 @@ public class MenusService implements IMenusService{
 	private MenusConverter menusConverter;
 	
 	@Override
-	public List<MenusModel> findAll() {
+	public List<MenusDto> findAll() {
 		// TODO Auto-generated method stub
-		List<MenusModel> menusModels = new ArrayList<>();
+		List<MenusDto> menusModels = new ArrayList<>();
 		List<MenusEntity> menusEntities = menusRepository.findAll();
 		for (MenusEntity menusEntity : menusEntities) {
-			MenusModel menusModel = menusConverter.toModel(menusEntity);
+			MenusDto menusModel = menusConverter.toModel(menusEntity);
 			menusModels.add(menusModel);
 		}
 		return menusModels;

@@ -12,7 +12,7 @@ import org.springframework.ui.Model;
 import com.laptrinhjavaweb.converter.ProductsConverter;
 import com.laptrinhjavaweb.entity.ColorsEntity;
 import com.laptrinhjavaweb.entity.ProductsEntity;
-import com.laptrinhjavaweb.model.dto.ProductsModel;
+import com.laptrinhjavaweb.model.dto.ProductsDto;
 import com.laptrinhjavaweb.model.response.FeaturedProducts;
 import com.laptrinhjavaweb.repository.ColorsRepository;
 import com.laptrinhjavaweb.repository.ProductsRepository;
@@ -59,12 +59,12 @@ public class ProductsService implements IProductsService{
 	}
 
 	@Override
-	public List<ProductsModel> findProductOfCategory(long categoryid) {
+	public List<ProductsDto> findProductOfCategory(long categoryid) {
 		// TODO Auto-generated method stub
-		List<ProductsModel> productsModels = new ArrayList<>();
+		List<ProductsDto> productsModels = new ArrayList<>();
 		List<ProductsEntity> entities = productsRepository.findByCategoryId(categoryid);
 		for (ProductsEntity productsEntity : entities) {
-			ProductsModel productsModel = productsConverter.toModel(productsEntity);
+			ProductsDto productsModel = productsConverter.toModel(productsEntity);
 			ColorsEntity colorsEntity = productsEntity.getColorsEntities().get(0);
 			productsModel.setImg(colorsEntity.getImg());
 			productsModels.add(productsModel);
@@ -73,13 +73,13 @@ public class ProductsService implements IProductsService{
 	}
 
 	@Override
-	public List<ProductsModel> findProductOfCategory(long id, Pageable pageable) {
+	public List<ProductsDto> findProductOfCategory(long id, Pageable pageable) {
 		// TODO Auto-generated method stub
-		List<ProductsModel> productsModels = new ArrayList<>();
+		List<ProductsDto> productsModels = new ArrayList<>();
 		Page<ProductsEntity> page = productsRepository.findByCategoryIdPaginate( id,pageable);
 		List<ProductsEntity> productsEntities = page.getContent();
 		for (ProductsEntity productsEntity : productsEntities) {
-			ProductsModel model = productsConverter.toModel(productsEntity);
+			ProductsDto model = productsConverter.toModel(productsEntity);
 			ColorsEntity colorsEntity = productsEntity.getColorsEntities().get(0);
 			model.setImg(colorsEntity.getImg());
 			productsModels.add(model);
@@ -95,10 +95,10 @@ public class ProductsService implements IProductsService{
 	}
 
 	@Override
-	public ProductsModel getProductByID(long id) {
+	public ProductsDto getProductByID(long id) {
 		// TODO Auto-generated method stub
 		ProductsEntity productsEntity = productsRepository.findOneById(id);
-		ProductsModel productsModel = productsConverter.toModel(productsEntity);
+		ProductsDto productsModel = productsConverter.toModel(productsEntity);
 		ColorsEntity colorsEntity = productsEntity.getColorsEntities().get(0);
 		productsModel.setImg(colorsEntity.getImg());
 		productsModel.setColor(colorsEntity.getCode());
@@ -106,9 +106,9 @@ public class ProductsService implements IProductsService{
 	}
 
 	@Override
-	public List<ProductsModel> getProductsByIdCategory(Long id) {
+	public List<ProductsDto> getProductsByIdCategory(Long id) {
 		// TODO Auto-generated method stub
-		List<ProductsModel> productsModels = new ArrayList<>();
+		List<ProductsDto> productsModels = new ArrayList<>();
 		List<ProductsEntity> productsEntities = productsRepository.findByCategoryEntity_Id(id);
 		return productsModels;
 	}

@@ -7,9 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SlidesModel {
+public class CategorysDto {
 	private Long id;
-	private String img;
-	private String caption;
-	private String content;
+	private String name;
+	private String description;
 }

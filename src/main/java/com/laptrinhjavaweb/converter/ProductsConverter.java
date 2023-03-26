@@ -3,13 +3,13 @@ package com.laptrinhjavaweb.converter;
 import org.springframework.stereotype.Component;
 
 import com.laptrinhjavaweb.entity.ProductsEntity;
-import com.laptrinhjavaweb.model.dto.ProductsModel;
+import com.laptrinhjavaweb.model.dto.ProductsDto;
 
 
 @Component
 public class ProductsConverter {
-	public ProductsModel toModel (ProductsEntity productsEntity) {
-		ProductsModel productsModel = new ProductsModel();
+	public ProductsDto toModel (ProductsEntity productsEntity) {
+		ProductsDto productsModel = new ProductsDto();
 		productsModel.setId(productsEntity.getId());
 		productsModel.setCreatedDate(productsEntity.getCreatedDate());
 		productsModel.setModifiedDate(productsEntity.getModifiedDate());

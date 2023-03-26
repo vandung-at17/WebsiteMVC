@@ -59,7 +59,7 @@ public class JPAConfig {
 		//properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
 		//properties.setProperty("hibernate.hbm2ddl.auto", "update");
 		properties.setProperty("hibernate.hbm2ddl.auto", "none");
-		properties.setProperty("spring.jpa.show-sql", "true");
+		properties.setProperty("spring.jpa.show_sql", "true");
 		//bật tính năng lazy lên
 		properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
 		return properties;

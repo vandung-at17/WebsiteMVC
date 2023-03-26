@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductsModel {
+public class ProductsDto {
 	private Long id;
 	private CategorysEntity categoryEntity;
 	private String name;

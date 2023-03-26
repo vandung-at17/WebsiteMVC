@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.laptrinhjavaweb.model.dto.CartModel;
+import com.laptrinhjavaweb.model.dto.CartDto;
 import com.laptrinhjavaweb.service.ICartService;
 import com.laptrinhjavaweb.service.ICategorysService;
 import com.laptrinhjavaweb.service.IProductsService;
@@ -34,7 +34,7 @@ public class CartController extends BaseController{
 	@Autowired
 	private ICategorysService categorysService;
 	
-	@RequestMapping(value= "/gio-hang")
+	@RequestMapping(value= "/gio-hang", method = RequestMethod.GET)
 	public ModelAndView homePage() {
 		mvShare.setViewName("user/cart/listcart");
 		mvShare.addObject("slides", slidesService.findAll());
@@ -45,9 +45,9 @@ public class CartController extends BaseController{
 	
 	@RequestMapping(value = "/AddCart/{id}", method = RequestMethod.GET)
 	public String AddCart(HttpServletRequest request,HttpSession session, @PathVariable long id) {
-		HashMap<Long, CartModel> cart=(HashMap<Long, CartModel>)session.getAttribute("Cart");
+		HashMap<Long, CartDto> cart=(HashMap<Long, CartDto>)session.getAttribute("Cart");
 		if (cart == null) {
-			cart = new HashMap<Long,CartModel>();
+			cart = new HashMap<Long,CartDto>();
 		}
 		cartService.AddCart(id, cart);
 		session.setAttribute("Cart", cart);
@@ -58,9 +58,9 @@ public class CartController extends BaseController{
 	
 	@RequestMapping(value = "/EditCart/{id}/{quanty}", method = RequestMethod.GET)
 	public String EditCart(HttpServletRequest request,HttpSession session, @PathVariable long id, @PathVariable int quanty) {
-		HashMap<Long, CartModel> cart=(HashMap<Long, CartModel>)session.getAttribute("Cart");
+		HashMap<Long, CartDto> cart=(HashMap<Long, CartDto>)session.getAttribute("Cart");
 		if (cart == null) {
-			cart = new HashMap<Long,CartModel>();
+			cart = new HashMap<Long,CartDto>();
 		}
 		cart = cartService.EditCart(id, quanty, cart);
 		session.setAttribute("Cart", cart);
@@ -71,9 +71,9 @@ public class CartController extends BaseController{
 	
 	@RequestMapping(value = "/DeleteCart/{id}", method = RequestMethod.GET)
 	public String DeleteCart(HttpServletRequest request,HttpSession session, @PathVariable long id) {
-		HashMap<Long, CartModel> cart=(HashMap<Long, CartModel>)session.getAttribute("Cart");
+		HashMap<Long, CartDto> cart=(HashMap<Long, CartDto>)session.getAttribute("Cart");
 		if (cart == null) {
-			cart = new HashMap<Long,CartModel>();
+			cart = new HashMap<Long,CartDto>();
 		}
 		cartService.DeleteCart(id, cart);
 		session.setAttribute("Cart", cart);

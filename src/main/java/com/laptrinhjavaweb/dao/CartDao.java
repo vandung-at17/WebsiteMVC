@@ -6,8 +6,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.laptrinhjavaweb.model.dto.CartModel;
-import com.laptrinhjavaweb.model.dto.ProductsModel;
+import com.laptrinhjavaweb.model.dto.CartDto;
+import com.laptrinhjavaweb.model.dto.ProductsDto;
 import com.laptrinhjavaweb.service.IProductsService;
 
 @Repository
@@ -17,9 +17,9 @@ public class CartDao {
 	private IProductsService productsService;
 
 	// Thêm hàng vào trong giỏ hàng
-	public HashMap<Long, CartModel> AddCart(long id, HashMap<Long, CartModel> cart) {
-		CartModel itemCart = new CartModel();
-		ProductsModel product = productsService.getProductByID(id);
+	public HashMap<Long, CartDto> AddCart(long id, HashMap<Long, CartDto> cart) {
+		CartDto itemCart = new CartDto();
+		ProductsDto product = productsService.getProductByID(id);
 		if (product != null && cart.containsKey(id)) {
 			itemCart = cart.get(id);
 			itemCart.setQuanty(itemCart.getQuanty() +1);
@@ -35,11 +35,11 @@ public class CartDao {
 	}
 
 	//
-	public HashMap<Long, CartModel> EditCart(long id, int quanty, HashMap<Long, CartModel> cart) {
+	public HashMap<Long, CartDto> EditCart(long id, int quanty, HashMap<Long, CartDto> cart) {
 		if (cart == null) {
 			return cart;
 		}
-		CartModel itemCart = new CartModel();
+		CartDto itemCart = new CartDto();
 		if (cart.containsKey(id)) {
 			itemCart = cart.get(id);
 			itemCart.setQuanty(quanty);
@@ -49,7 +49,7 @@ public class CartDao {
 		return cart;
 	}
 
-	public HashMap<Long, CartModel> DeleteCart(long id, HashMap<Long, CartModel> cart){
+	public HashMap<Long, CartDto> DeleteCart(long id, HashMap<Long, CartDto> cart){
 		if (cart == null) {
 			return cart;
 		}
@@ -59,17 +59,17 @@ public class CartDao {
 		return cart;
 	}
 	
-	public int TotalQuanty( HashMap<Long, CartModel> cart){
+	public int TotalQuanty( HashMap<Long, CartDto> cart){
 		int totalQuanty = 0;
-		for(Map.Entry<Long, CartModel> itemCart : cart.entrySet()) {
+		for(Map.Entry<Long, CartDto> itemCart : cart.entrySet()) {
 			totalQuanty += itemCart.getValue().getQuanty();
 		}
 		return totalQuanty;
 	}
 	
-	public double totalAllPrice(HashMap<Long, CartModel> cart) {
+	public double totalAllPrice(HashMap<Long, CartDto> cart) {
 		double totalAllPrice = 0;
-		for(Map.Entry<Long, CartModel> itemCart : cart.entrySet()) {
+		for(Map.Entry<Long, CartDto> itemCart : cart.entrySet()) {
 			totalAllPrice += itemCart.getValue().getTotalPrice();
 		}
 		return totalAllPrice;

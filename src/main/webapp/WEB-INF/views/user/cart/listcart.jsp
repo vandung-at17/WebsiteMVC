@@ -19,7 +19,7 @@ Body Section
 					<div class="well well-small">
 						<h1>
 							Check Out
-							<small class="pull-right"> 2 Items are in the cart </small>
+							<small class="pull-right"> ${Cart.size()} Items are in the cart </small>
 						</h1>
 						<hr class="soften" />
 

@@ -4,17 +4,17 @@ import java.sql.ResultSet;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.laptrinhjavaweb.model.dto.SlidesModel;
+import com.laptrinhjavaweb.model.dto.SlidesDto;
 
 
 
-public class MapperSlides implements RowMapper<SlidesModel>{
+public class MapperSlides implements RowMapper<SlidesDto>{
 
 	@Override
-	public SlidesModel mapRow(ResultSet rs, int rowNum)  {
+	public SlidesDto mapRow(ResultSet rs, int rowNum)  {
 		// TODO Auto-generated method stub
 		try {
-			SlidesModel slidesModel = new SlidesModel();
+			SlidesDto slidesModel = new SlidesDto();
 			slidesModel.setId(rs.getLong("id"));
 			slidesModel.setImg(rs.getString("img"));
 			slidesModel.setCaption(rs.getString("caption"));

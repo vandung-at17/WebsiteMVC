@@ -2,8 +2,8 @@ package com.laptrinhjavaweb.service;
 
 import java.util.List;
 
-import com.laptrinhjavaweb.model.dto.CategorysModel;
+import com.laptrinhjavaweb.model.dto.CategorysDto;
 
 public interface ICategorysService {
-	List<CategorysModel> findAll ();
+	List<CategorysDto> findAll ();
 }

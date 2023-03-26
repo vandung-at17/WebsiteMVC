@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CartModel {
-	private int quanty; //số lượng
-	private double totalPrice; //Tổng Giá
-	private ProductsModel product;
+public class SlidesDto {
+	private Long id;
+	private String img;
+	private String caption;
+	private String content;
 }

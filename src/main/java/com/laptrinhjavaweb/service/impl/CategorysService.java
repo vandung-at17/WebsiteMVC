@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.laptrinhjavaweb.converter.CategorysConverter;
 import com.laptrinhjavaweb.entity.CategorysEntity;
-import com.laptrinhjavaweb.model.dto.CategorysModel;
+import com.laptrinhjavaweb.model.dto.CategorysDto;
 import com.laptrinhjavaweb.repository.CategorysRepository;
 import com.laptrinhjavaweb.service.ICategorysService;
 
@@ -22,12 +22,12 @@ public class CategorysService implements ICategorysService{
 	private CategorysConverter categorysConverter;
 	
 	@Override
-	public List<CategorysModel> findAll() {
+	public List<CategorysDto> findAll() {
 		// TODO Auto-generated method stub
-		List<CategorysModel> categorysModels = new ArrayList<>();
+		List<CategorysDto> categorysModels = new ArrayList<>();
 		List<CategorysEntity> categorysEntities = categorysRepository.findAll();
 		for (CategorysEntity categorysEntity : categorysEntities) {
-			CategorysModel categorysModel = categorysConverter.toModel(categorysEntity);
+			CategorysDto categorysModel = categorysConverter.toModel(categorysEntity);
 			categorysModels.add(categorysModel);
 		}
 		return categorysModels;
