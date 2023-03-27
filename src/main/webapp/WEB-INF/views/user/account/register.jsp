@@ -93,12 +93,12 @@ Body Section
 						<li><a href="index.html" title="Home">Trang Chủ</a> <span class="divider">/</span></li>
 						<li class="active" title="Registration">Đăng Ký</li>
 					</ul>
-					<h3> Registration</h3>
+					<h3 title="Registration">Đăng Ký</h3>
 					<hr class="soft" />
 					<div class="well">
-						<form class="form-horizontal">
-							<h3>Your Personal Details</h3>
-							<div class="control-group">
+						<form:form action="dang-ky" modelAttribute="user" method="POST" class="form-horizontal">  
+							<h3 title="Your Personal Details">Thông Tin Cá Nhân Của Bạn</h3>
+							<!-- <div class="control-group">
 								<label class="control-label">Title <sup>*</sup></label>
 								<div class="controls">
 									<select class="span1" name="days">
@@ -108,32 +108,40 @@ Body Section
 										<option value="3">Miss</option>
 									</select>
 								</div>
-							</div>
+							</div> -->
 							<div class="control-group">
 								<label class="control-label" for="inputFname">First name <sup>*</sup></label>
 								<div class="controls">
-									<input type="text" id="inputFname" placeholder="First Name">
+									<!-- <input type="text" id="inputFname" placeholder="First Name"> -->
+									<form:input type="text" path="firstName" id="inputFname" placeholder="First Name"/> 
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="inputLname">Last name <sup>*</sup></label>
 								<div class="controls">
-									<input type="text" id="inputLname" placeholder="Last Name">
+									<!-- <input type="text" id="inputLname" placeholder="Last Name"> -->
+									<form:input type="text" path="lastName" id="inputLname" placeholder="Last Name"/>
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label" for="inputEmail">Email <sup>*</sup></label>
+								<label class="control-label" for="inputEmail">Email<sup>*</sup></label>
 								<div class="controls">
-									<input type="text" placeholder="Email">
+									<form:input type="email" path="email" placeholder="Email"/>  
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label">Password <sup>*</sup></label>
+								<label class="control-label">Password<sup>*</sup></label>
 								<div class="controls">
-									<input type="password" placeholder="Password">
+									<form:input type="password" path="password" placeholder="Password"/> 
 								</div>
 							</div>
 							<div class="control-group">
+								<label class="control-label">Địa Chỉ<sup>*</sup></label>
+								<div class="controls">
+									<form:input type="text" path="address" placeholder="Mời Nhập Địa Chỉ"/> 
+								</div>
+							</div>
+							<!-- <div class="control-group">
 								<label class="control-label">Date of Birth <sup>*</sup></label>
 								<div class="controls">
 									<select class="span1" name="days">
@@ -167,14 +175,14 @@ Body Section
 										<option value="7">7&nbsp;&nbsp;</option>
 									</select>
 								</div>
-							</div>
+							</div> -->
 							<div class="control-group">
 								<div class="controls">
-									<input type="submit" name="submitAccount" value="Register"
+									<input type="submit" name="submitAccount" value="Đăng Ký" title="Register"
 										class="exclusive shopBtn">
 								</div>
 							</div>
-						</form>
+						</form:form>
 					</div>
 
 					<div class="well">
@@ -217,24 +225,6 @@ Body Section
 					<div class="well">
 						<form class="form-horizontal">
 							<h3>Your Account Details</h3>
-							<div class="control-group">
-								<label class="control-label">Fiels label <sup>*</sup></label>
-								<div class="controls">
-									<input type="text" placeholder=" Field name">
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">Fiels label <sup>*</sup></label>
-								<div class="controls">
-									<input type="text" placeholder=" Field name">
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">Fiels label <sup>*</sup></label>
-								<div class="controls">
-									<input type="text" placeholder=" Field name">
-								</div>
-							</div>
 							<div class="control-group">
 								<label class="control-label">Fiels label <sup>*</sup></label>
 								<div class="controls">

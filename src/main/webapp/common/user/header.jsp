@@ -15,7 +15,8 @@
 						</div>
 						<a class="active" href="<c:url value="/trang-chu"/>"> <span class="icon-home"></span> Home</a>
 						<a href="#"><span class="icon-user"></span> My Account</a>
-						<a href="<c:url value="/dang-ky"/>"><span class="icon-edit" title="Free Register"></span> Đăng ký </a>
+						<a href="<c:url value="/dang-ky"/>"><span class="icon-edit" title="Free Register"></span>Đăng ký</a>
+						<a href="<c:url value="/dang-nhap"/>"><span class="icon-edit" title="Free Register"></span>Đăng Nhập</a>
 						<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
 						<a href="<c:url value="/gio-hang"/>"><span class="icon-shopping-cart"></span> ${TotalQuantyCart} Item(s) - <span
 								class="badge badge-warning"><fmt:formatNumber type="number" groupingUsed="true" value="${TotalPriceCart}"/>₫</span></a>
@@ -92,8 +93,9 @@ Navigation Bar Section
 							</form>
 							<ul class="nav pull-right">
 								<li class="dropdown">
-									<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span
-											class="icon-lock"></span> Login <b class="caret"></b></a>
+									<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+									<span class="icon-lock"></span> Login <b class="caret"></b>
+									</a>
 									<div class="dropdown-menu">
 										<form class="form-horizontal loginFrm">
 											<div class="control-group">

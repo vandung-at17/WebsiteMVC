@@ -1,7 +1,14 @@
 package com.laptrinhjavaweb.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -17,9 +24,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserEntity extends BaseEntity {
 	
-	@Column (name= "user", nullable = false)
-	private String user;
-	
 	@Column (name = "password" , nullable = false)
 	private String password;
 	
@@ -31,4 +35,12 @@ public class UserEntity extends BaseEntity {
 	
 	@Column (name = "email")
 	private String email;
+	
+	@Column (name ="")
+	private Integer status;
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name ="user_role",joinColumns= @JoinColumn(name = "userid"),
+	inverseJoinColumns = @JoinColumn(name = "roleid"))
+	private List<RoleEntity> roleEntities = new ArrayList<>();
 }

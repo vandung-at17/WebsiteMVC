@@ -88,7 +88,7 @@
 				<div class="well np">
 					<div id="myCarousel" class="carousel slide homCar">
 						<div class="carousel-inner">
-							<c:forEach var="item" items="${slides}" varStatus="index">
+							<c:forEach var="item" items="${slides}" varStatus="index" >
 								<c:if test="${index.first}">
 									<div class="item active">
 								</c:if>

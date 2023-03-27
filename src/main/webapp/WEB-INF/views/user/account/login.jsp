@@ -93,7 +93,7 @@ Body Section
 				</ul>
 				<h3> Login</h3>
 				<hr class="soft" />
-
+					
 				<div class="row">
 					<div class="span4">
 						<div class="well">
@@ -115,18 +115,18 @@ Body Section
 					<div class="span1"> &nbsp;</div>
 					<div class="span4">
 						<div class="well">
-							<h5>ALREADY REGISTERED ?</h5>
-							<form>
+							<h5 title="ALREADY REGISTERED ?">Đăng Nhập Hệ Thống</h5>
+							<form:form action="dang-nhap" modelAttribute="user" method="POST"> 
 								<div class="control-group">
 									<label class="control-label" for="inputEmail">Email</label>
 									<div class="controls">
-										<input class="span3" type="text" placeholder="Email">
+										<form:input type="email" path="email" class="span3" placeholder="Email"/>  
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label" for="inputPassword">Password</label>
 									<div class="controls">
-										<input type="password" class="span3" placeholder="Password">
+										<form:input type="password" path="password" class="span3" placeholder="Password"/>
 									</div>
 								</div>
 								<div class="control-group">
@@ -135,7 +135,7 @@ Body Section
 											password?</a>
 									</div>
 								</div>
-							</form>
+							</form:form>
 						</div>
 					</div>
 				</div>

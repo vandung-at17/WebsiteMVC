@@ -14,7 +14,6 @@ public class UserDto {
 	private Long id;
 	private Date createdDate;
 	private Date modifiedDate;
-	private String user;
 	private String password;
 	private String display_name;
 	private String address;
