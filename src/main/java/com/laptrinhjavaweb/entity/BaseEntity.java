@@ -16,11 +16,10 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.Getter;
-import lombok.Setter;
 
 //Định nghĩa đây là entity cha
 @MappedSuperclass
-//@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class)
 @Getter
 public abstract class BaseEntity {
 	@Id
@@ -28,22 +27,22 @@ public abstract class BaseEntity {
 	private Long id;
 	
 	@Column(name = "createddate")
-	//@CreatedDate
-	@Setter
+	@CreatedDate
+	//@Setter
 	private Date createdDate;
 	
 	@Column(name = "modifieddate")
-	//@LastModifiedDate
-	@Setter
+	@LastModifiedDate
+	//@Setter
 	private Date modifiedDate;
 	
 	@Column(name = "createdby")
-	//@CreatedBy
-	@Setter
+	@CreatedBy
+	//@Setter
 	private String createdBy;
 	
 	@Column(name = "modifiedby")
-	//LastModifiedBy
-	@Setter
+	@LastModifiedBy
+	//@Setter
 	private String  modifiedBy;
 }

@@ -32,4 +32,8 @@ public class HomeController extends BaseController{
 		return mvShare;
 	}
 
+	@RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
+	public ModelAndView accessDenied() {
+		return new ModelAndView("redirect:/dang-nhap?accessDenied");
+	}
 }

@@ -1,4 +1,5 @@
 <%@include file="/common/taglib.jsp" %>
+<%@page import="com.laptrinhjavaweb.util.SecurityUtils" %>
 	<!-- 
 	Upper Header Section 
     -->
@@ -12,7 +13,7 @@
 							<a href="#"><span class="icon-youtube"></span></a>
 							<a href="#"><span class="icon-tumblr"></span></a>
 						</div>
-						<a class="active" href="index.html"> <span class="icon-home"></span> Home</a>
+						<a class="active" href="<c:url value="/home"/>"> <span class="icon-home"></span> Home</a>
 						<a href="#"><span class="icon-user"></span> My Account</a>
 						<a href="register.html"><span class="icon-edit"></span> Free Register </a>
 						<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
