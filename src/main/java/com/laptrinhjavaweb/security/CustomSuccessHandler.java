@@ -4,20 +4,27 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
+import com.laptrinhjavaweb.service.impl.CustomUserDetailsService;
 import com.laptrinhjavaweb.util.SecurityUtils;
 
 @Component
 // Phần này xử lý phần phân quyền sau khi đăng nhập
 public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
+	
+	@Autowired
+	private CustomUserDetailsService customUserDetailsService;
 	
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 	
@@ -29,11 +36,20 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
 		if (response.isCommitted()) {
 			return;
 		}
+		String email= request.getParameter("j_username");
+		String remember = request.getParameter("remember-me");
+		UserDetails details = customUserDetailsService.loadUserByUsername(email);
+		Cookie user = new Cookie("email", details.getUsername());
+		user.setMaxAge(90);
+		response.addCookie(user);
+		if (remember != null) {
+			Cookie pass = new Cookie("password", details.getPassword());
+			pass.setMaxAge(70);
+			response.addCookie(pass);
+		}
 		redirectStrategy.sendRedirect(request, response, targetUrl);
 	}
 	
-	
-
 	public RedirectStrategy getRedirectStrategy() {
 		return redirectStrategy;
 	}

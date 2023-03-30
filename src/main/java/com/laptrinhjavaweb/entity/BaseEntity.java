@@ -28,21 +28,17 @@ public abstract class BaseEntity {
 	
 	@Column(name = "createddate")
 	@CreatedDate
-	//@Setter
 	private Date createdDate;
 	
 	@Column(name = "modifieddate")
 	@LastModifiedDate
-	//@Setter
 	private Date modifiedDate;
 	
 	@Column(name = "createdby")
 	@CreatedBy
-	//@Setter
 	private String createdBy;
 	
 	@Column(name = "modifiedby")
 	@LastModifiedBy
-	//@Setter
 	private String  modifiedBy;
 }

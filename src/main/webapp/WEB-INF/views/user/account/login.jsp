@@ -79,8 +79,9 @@ Body Section
 				<li>
 					<div class="thumbnail">
 						<a class="zoomTool" href="product_details.html"
-							title="add to cart"><span class="icon-search"></span> QUICK
-							VIEW</a> <img src="assets/img/shopping-cart-template.png"
+							title="add to cart"><span class="icon-search"></span> QUICK VIEW</a> 
+							<img
+							src="<c:url value='/template/user/assets/img/shopping-cart-template.PNG'/>"
 							alt="shopping cart template">
 						<div class="caption">
 							<h4>
@@ -95,7 +96,9 @@ Body Section
 					<div class="thumbnail">
 						<a class="zoomTool" href="product_details.html"
 							title="add to cart"><span class="icon-search"></span> QUICK
-							VIEW</a> <img src="assets/img/bootstrap-template.png"
+							VIEW</a>
+							<img
+							src="<c:url value='/template/user/assets/img/bootstrap-template.png'/>"
 							alt="bootstrap template">
 						<div class="caption">
 							<h4>
@@ -152,35 +155,31 @@ Body Section
 								<strong>${alert}</strong><br> You Not Authorize
 							</div>
 						</c:if>
-						<form action="j_spring_security_check" id="Login" method="post">
+						<form action="j_spring_security_check" id="Login" method="post" name='loginForm'>
 							<div class="control-group">
 								<label class="control-label" for="inputEmail">Email</label>
 								<div class="controls">
-									<input class="span3" type="email" placeholder="Email"
+									<input class="span3" type="email" placeholder="Email" id="email" value="${email}"
 										name="j_username">
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="inputPassword">Password</label>
 								<div class="controls">
-									<input type="password" class="span3" placeholder="Password"
+									<input type="password" class="span3" placeholder="Password" id ="password" value="${password}"
 										name="j_password">
 								</div>
 							</div>
 							<div class="control-group">
-								
+								<label class="checkbox"> 
+									<td>Remember Me:</td>
+                					<td><input type="checkbox" name="remember-me" /></td>
+								</label>
 								<div class="controls">
-									<input type="checkbox" class="span3" id="remember"
-										>
-										<label class="control-label" for="remember">Remember password</label>
-								</div>
-							</div>
-							
-							<div class="control-group">
-								<div class="controls">
-									<button type="submit" class="defaultBtn">Sign in</button>
+									<button type="submit" name="submit" class="defaultBtn">Sign in</button>
 									<a href="#">Forget password?</a>
 								</div>
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 							</div>
 						</form>
 					</div>

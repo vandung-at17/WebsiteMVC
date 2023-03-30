@@ -54,4 +54,7 @@ public class ProductsEntity extends BaseEntity {
 	
 	@OneToMany(mappedBy = "productsEntity")
 	private List<ColorsEntity> colorsEntities = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "product")
+	private List<BillDetailREntity> billDetailREntities = new ArrayList<>();
 }

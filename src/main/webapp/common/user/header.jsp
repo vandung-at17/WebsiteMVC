@@ -106,7 +106,7 @@ Navigation Bar Section
 									<div class="dropdown-menu">
 										<form class="form-horizontal loginFrm">
 											<div class="control-group">
-												<input type="text" class="span2" id="inputEmail" placeholder="Email">
+												<input type="email" class="span2" id="inputEmail" placeholder="Email">
 											</div>
 											<div class="control-group">
 												<input type="password" class="span2" id="inputPassword"

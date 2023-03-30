@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.controller.user;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -38,23 +39,52 @@ public class UserController extends BaseController {
 	}
 
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.GET)
-	public ModelAndView Login() {
+	public ModelAndView Login(HttpServletRequest request,HttpServletResponse response) {
+		Cookie arr[] = request.getCookies();
+		if (arr != null) {
+			for(Cookie cookie : arr) {
+				if (cookie.getName().equals("email")) {
+					request.setAttribute("email", cookie.getValue());
+				}
+				if (cookie.getName().equals("password")) {
+					request.setAttribute("password", cookie.getValue());
+				}
+			}
+		}
 		mvShare.setViewName("user/account/login");
-		mvShare.addObject("user", new UserLoginRequest());
+		//mvShare.addObject("user", new UserLoginRequest());
 		return mvShare;
 	}
 
-	/*
-	 * @RequestMapping(value = "/dang-nhap", method = RequestMethod.POST) public
-	 * ModelAndView LoginAcc(@ModelAttribute("user") UserLoginRequest user) {
-	 * mvShare.setViewName("user/account/login"); return mvShare; }
-	 */
 
 	@RequestMapping(value = "/thoat", method = RequestMethod.GET)
 	public ModelAndView LogOut(HttpServletRequest request, HttpServletResponse response) {
+		String email="";
+		String password="";
+		Cookie arr[] = request.getCookies();
+		if (arr != null) {
+			for (Cookie cookie : arr) {
+				if (cookie.getName().equals("email")) {
+					email= cookie.getValue();
+				}
+				if (cookie.getName().equals("password")) {
+					password = cookie.getValue();
+				}
+			}
+		}
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (authentication != null) {
 			new SecurityContextLogoutHandler().logout(request, response, authentication);
+		}
+		if (email != null && email.isEmpty()== false) {
+			Cookie gmail = new Cookie("email",email);
+			gmail.setMaxAge(100);
+			response.addCookie(gmail);
+		}
+		if (password != null && password.isEmpty() == false) {
+		Cookie pass = new Cookie("password", password);
+		pass.setMaxAge(100);
+		response.addCookie(pass);
 		}
 		return new ModelAndView("redirect:/trang-chu");
 	}

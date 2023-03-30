@@ -23,8 +23,8 @@ public class UserConverter {
 	public UserEntity registerToEntity(UserRegisterRequest request) {
 		UserEntity userEntity = new UserEntity();
 		userEntity.setDisplay_name(request.getFirstName()+request.getLastName());
-		//userEntity.setPassword(BCrypt.hashpw(request.getPassword(), BCrypt.gensalt(12)));
-		userEntity.setPassword(request.getPassword());
+		userEntity.setPassword(BCrypt.hashpw(request.getPassword(), BCrypt.gensalt(12)));
+		//userEntity.setPassword(request.getPassword());
 		userEntity.setStatus(1);
 		userEntity.setAddress(request.getAddress());
 		userEntity.setEmail(request.getEmail());

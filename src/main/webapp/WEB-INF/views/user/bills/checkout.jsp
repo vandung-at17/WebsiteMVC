@@ -1,15 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-	<%@include file="/common/taglib.jsp" %>
-		<!DOCTYPE html>
-		<html>
-
-		<head>
-			<meta charset="UTF-8">
-			<title>Đăng Ký Tài Khoản</title>
-		</head>
-
-		<body>
-			<!-- 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="/common/taglib.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Thanh Toán</title>
+</head>
+<body>
+<!-- 
 Body Section 
 -->
 			<div class="row">
@@ -91,99 +89,51 @@ Body Section
 				<div class="span9">
 					<ul class="breadcrumb">
 						<li><a href="index.html" title="Home">Trang Chủ</a> <span class="divider">/</span></li>
-						<li class="active" title="Registration">Đăng Ký</li>
+						<li class="active" title="Registration">Thanh Toán</li>
 					</ul>
-					<h3 title="Registration">Đăng Ký</h3>
 					<hr class="soft" />
 					<div class="well">
-						<form:form action="dang-ky" modelAttribute="user" method="POST" class="form-horizontal">  
-							<h3 title="Your Personal Details">Thông Tin Cá Nhân Của Bạn</h3>
-							<!-- <div class="control-group">
-								<label class="control-label">Title <sup>*</sup></label>
-								<div class="controls">
-									<select class="span1" name="days">
-										<option value="">-</option>
-										<option value="1">Mr.</option>
-										<option value="2">Mrs</option>
-										<option value="3">Miss</option>
-									</select>
-								</div>
-							</div> -->
+						<form class="form-horizontal">
+							<h3 title="Your Billing Details">Thanh Toán Đơn Hàng</h3>
 							<div class="control-group">
-								<label class="control-label" for="inputFname">First name <sup>*</sup></label>
+								<label class="control-label">Họ Và Tên <sup>*</sup></label>
 								<div class="controls">
-									<!-- <input type="text" id="inputFname" placeholder="First Name"> -->
-									<form:input type="text" path="firstName" id="inputFname" placeholder="First Name"/> 
+									<input type="text" placeholder="Mời Nhập Họ Và Tên">
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label" for="inputLname">Last name <sup>*</sup></label>
+								<label class="control-label">Email <sup>*</sup></label>
 								<div class="controls">
-									<!-- <input type="text" id="inputLname" placeholder="Last Name"> -->
-									<form:input type="text" path="lastName" id="inputLname" placeholder="Last Name"/>
+									<input type="text" placeholder="Mời Bạn Nhập Email">
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label" for="inputEmail">Email<sup>*</sup></label>
+								<label class="control-label">Liên Hệ <sup>*</sup></label>
 								<div class="controls">
-									<form:input type="email" path="email" placeholder="Email"/>  
+									<input type="text" placeholder=" Mời Nhập Số Điện Thoại">
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label">Password<sup>*</sup></label>
+								<label class="control-label">Địa Chỉ <sup>*</sup></label>
 								<div class="controls">
-									<form:input type="password" path="password" placeholder="Password"/> 
+									<textarea type="text" placeholder="Nhập Địa Chỉ Cụ Thể"></textarea>
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label">Địa Chỉ<sup>*</sup></label>
+								<label class="control-label">Ghi Chú <sup>*</sup></label>
 								<div class="controls">
-									<form:input type="text" path="address" placeholder="Mời Nhập Địa Chỉ"/> 
+									<textarea type="text" placeholder="Mời Bạn Nhập Ghi Chú"></textarea>
 								</div>
 							</div>
-							<!-- <div class="control-group">
-								<label class="control-label">Date of Birth <sup>*</sup></label>
-								<div class="controls">
-									<select class="span1" name="days">
-										<option value="">-</option>
-										<option value="1">1&nbsp;&nbsp;</option>
-										<option value="2">2&nbsp;&nbsp;</option>
-										<option value="3">3&nbsp;&nbsp;</option>
-										<option value="4">4&nbsp;&nbsp;</option>
-										<option value="5">5&nbsp;&nbsp;</option>
-										<option value="6">6&nbsp;&nbsp;</option>
-										<option value="7">7&nbsp;&nbsp;</option>
-									</select>
-									<select class="span1" name="days">
-										<option value="">-</option>
-										<option value="1">1&nbsp;&nbsp;</option>
-										<option value="2">2&nbsp;&nbsp;</option>
-										<option value="3">3&nbsp;&nbsp;</option>
-										<option value="4">4&nbsp;&nbsp;</option>
-										<option value="5">5&nbsp;&nbsp;</option>
-										<option value="6">6&nbsp;&nbsp;</option>
-										<option value="7">7&nbsp;&nbsp;</option>
-									</select>
-									<select class="span1" name="days">
-										<option value="">-</option>
-										<option value="1">1&nbsp;&nbsp;</option>
-										<option value="2">2&nbsp;&nbsp;</option>
-										<option value="3">3&nbsp;&nbsp;</option>
-										<option value="4">4&nbsp;&nbsp;</option>
-										<option value="5">5&nbsp;&nbsp;</option>
-										<option value="6">6&nbsp;&nbsp;</option>
-										<option value="7">7&nbsp;&nbsp;</option>
-									</select>
-								</div>
-							</div> -->
 							<div class="control-group">
 								<div class="controls">
-									<input type="submit" name="submitAccount" value="Đăng Ký" title="Register"
-										class="exclusive shopBtn">
+									<input type="submit" name="submitAccount" value="Register"
+										class="shopBtn exclusive">
 								</div>
 							</div>
-						</form:form>
+						</form>
 					</div>
+
 
 					<div class="well">
 						<form class="form-horizontal">
@@ -260,6 +210,5 @@ Body Section
 
 				</div>
 			</div>
-		</body>
-
-		</html>
+</body>
+</html>

@@ -4,6 +4,8 @@
         <class>com.laptrinhjavaweb.entity.SlidesEntity</class>
         <class>com.laptrinhjavaweb.entity.CategorysEntity</class>
         <class>com.laptrinhjavaweb.entity.ProductsEntity</class>
+        <class>com.laptrinhjavaweb.entity.BillDetailREntity</class>
+        <class>com.laptrinhjavaweb.entity.BillsEntity</class>
         <class>com.laptrinhjavaweb.entity.ColorsEntity</class>
         <class>com.laptrinhjavaweb.entity.MenusEntity</class>
         <class>com.laptrinhjavaweb.entity.UserEntity</class>
