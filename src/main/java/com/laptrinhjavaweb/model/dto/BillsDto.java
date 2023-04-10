@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+// Thông tin người mua hàng
 public class BillsDto {
-	private long id;
 	private String email;
 	private String phone;
 	private String display_name;

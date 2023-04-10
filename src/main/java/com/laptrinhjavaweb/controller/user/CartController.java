@@ -2,7 +2,9 @@ package com.laptrinhjavaweb.controller.user;
 
 import java.util.HashMap;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +15,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.laptrinhjavaweb.entity.UserEntity;
 import com.laptrinhjavaweb.model.dto.BillsDto;
 import com.laptrinhjavaweb.model.dto.CartDto;
+import com.laptrinhjavaweb.model.dto.UserDto;
+import com.laptrinhjavaweb.model.request.UserRegisterRequest;
+import com.laptrinhjavaweb.service.IBillDetailService;
+import com.laptrinhjavaweb.service.IBillsService;
 import com.laptrinhjavaweb.service.ICartService;
 import com.laptrinhjavaweb.service.ICategorysService;
 import com.laptrinhjavaweb.service.IProductsService;
 import com.laptrinhjavaweb.service.ISlidesService;
+import com.laptrinhjavaweb.service.IUserService;
 
 @Controller
 public class CartController extends BaseController{
@@ -32,9 +40,17 @@ public class CartController extends BaseController{
 	@Autowired
 	private IProductsService productsService;
 	
+	@Autowired
+	private IUserService userService;
 	
 	@Autowired
 	private ICategorysService categorysService;
+	
+	@Autowired
+	private IBillsService billsService;
+	
+	@Autowired
+	private IBillDetailService billDetailService;
 	
 	@RequestMapping(value= "/gio-hang", method = RequestMethod.GET)
 	public ModelAndView homePage() {
@@ -85,15 +101,35 @@ public class CartController extends BaseController{
 	}
 	
 	@RequestMapping(value = "/CheckOut", method = RequestMethod.GET)
-	public ModelAndView CheckOut(HttpServletRequest request, HttpSession session) {
+	public ModelAndView CheckOut(HttpServletRequest request ) {
+		BillsDto billsDto = new BillsDto();
+		String email="";
+		Cookie arr[] = request.getCookies();
+		if (arr != null) {
+			for (Cookie cookie : arr) {
+				if (cookie.getName().equals("email")) {
+					email= cookie.getValue();
+				}
+			}
+		}
+		UserDto userDto = userService.findOneByEmail(email);
+		billsDto.setDisplay_name(userDto.getDisplay_name());
+		billsDto.setEmail(email);
+		billsDto.setAddress(userDto.getAddress());
 		mvShare.setViewName("user/bills/checkout");
-		mvShare.addObject("bills", new BillsDto());
+		mvShare.addObject("bills", billsDto);
 		return mvShare;
 	}
 	
 	@RequestMapping(value = "/CheckOut", method = RequestMethod.POST)
-	public ModelAndView CheckOut(HttpServletRequest request, HttpSession session, @ModelAttribute("bills") BillsDto billsDto) {
-		mvShare.setViewName("user/bills/checkout");
-		return mvShare;
+	public String CheckOut(HttpServletRequest request, HttpSession session, @ModelAttribute("bills") BillsDto billsDto) {
+		billsDto.setQuanty(Integer.parseInt((String)session.getAttribute("TotalPriceCart")));
+		billsDto.setTotal(Double.parseDouble((String)session.getAttribute("TotalQuantyCart")));
+		if(billsService.addBills(billsDto)>0) {
+			HashMap<Long, CartDto> carts = (HashMap<Long, CartDto>)session.getAttribute("Cart");
+			billDetailService.addBillsDetail(carts);
+		}
+		session.removeAttribute("Cart");
+		return "redirect:gio-hang";
 	}
 }

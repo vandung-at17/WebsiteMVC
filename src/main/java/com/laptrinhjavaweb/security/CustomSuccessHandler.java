@@ -37,13 +37,13 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
 			return;
 		}
 		String email= request.getParameter("j_username");
+		String password = request.getParameter("j_password");
 		String remember = request.getParameter("remember-me");
-		UserDetails details = customUserDetailsService.loadUserByUsername(email);
-		Cookie user = new Cookie("email", details.getUsername());
+		Cookie user = new Cookie("email", email);
 		user.setMaxAge(90);
 		response.addCookie(user);
 		if (remember != null) {
-			Cookie pass = new Cookie("password", details.getPassword());
+			Cookie pass = new Cookie("password", password);
 			pass.setMaxAge(70);
 			response.addCookie(pass);
 		}

@@ -15,25 +15,15 @@ Body Section
 			<div class="row">
 				<div id="sidebar" class="span3">
 					<div class="well well-small">
-						<ul class="nav nav-list">
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a>
-							</li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a>
-							</li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry &
-									Watches</a></li>
-							<li style="border:0"> &nbsp;</li>
-							<li> <a class="totalInCart" href="cart.html"><strong>Total Amount <span
-											class="badge badge-warning pull-right"
-											style="line-height:18px;">$448.42</span></strong></a></li>
-						</ul>
+					<ul class="nav nav-list">
+						<c:forEach var="item" items="${categorys}">
+							<li><a href='<c:url value="/loai-san-pham/${item.id}"/>'><span class="icon-chevron-right"></span>${item.name}</a></li>	
+						</c:forEach>
+						<li style="border:0"> &nbsp;</li>
+						<li> <a class="totalInCart" href="cart.html"><strong title="Tổng Tiền">Total Amount<span
+										class="badge badge-warning pull-right"
+										style="line-height:18px;"><fmt:formatNumber type="number" groupingUsed="true" value="${TotalPriceCart}"/>₫</span></strong></a></li>
+					</ul>
 					</div>
 
 					<div class="well well-small alert alert-warning cntr">
@@ -111,21 +101,21 @@ Body Section
 							</div> -->
 							<div class="control-group">
 								<label class="control-label" for="inputFname">First name <sup>*</sup></label>
-								<div class="controls">
+								<div class="controls" accept-charset="UTF-8">
 									<!-- <input type="text" id="inputFname" placeholder="First Name"> -->
-									<form:input type="text" path="firstName" id="inputFname" placeholder="First Name"/> 
+									<form:input type="text"  path="firstName" id="inputFname" placeholder="First Name"/> 
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="inputLname">Last name <sup>*</sup></label>
-								<div class="controls">
+								<div class="controls" accept-charset="UTF-8">
 									<!-- <input type="text" id="inputLname" placeholder="Last Name"> -->
 									<form:input type="text" path="lastName" id="inputLname" placeholder="Last Name"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="inputEmail">Email<sup>*</sup></label>
-								<div class="controls">
+								<div class="controls" accept-charset="UTF-8">
 									<form:input type="email" path="email" placeholder="Email"/>  
 								</div>
 							</div>
@@ -137,8 +127,8 @@ Body Section
 							</div>
 							<div class="control-group">
 								<label class="control-label">Địa Chỉ<sup>*</sup></label>
-								<div class="controls">
-									<form:input type="text" path="address" placeholder="Mời Nhập Địa Chỉ"/> 
+								<div class="controls" accept-charset="UTF-8">
+									<form:textarea type="text" path="address" placeholder="Mời Nhập Địa Chỉ"/> 
 								</div>
 							</div>
 							<!-- <div class="control-group">

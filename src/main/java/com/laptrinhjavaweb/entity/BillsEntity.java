@@ -11,7 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 //Thông tin của người nào đó mua hàng
+@Data
 @Entity
 @Table(name ="bills")
 public class BillsEntity {
@@ -42,5 +45,5 @@ public class BillsEntity {
 	private String note;
 	
 	@OneToMany(mappedBy = "billsEntity")
-	private List<BillDetailREntity> billDetailREntities = new ArrayList<>();
+	private List<BillDetailEntity> billDetailREntities = new ArrayList<>();
 }

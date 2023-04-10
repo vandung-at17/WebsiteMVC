@@ -43,17 +43,16 @@
 					</select>
 				</div>
 				<h3 title="Our Products">Danh Sách Sản Phẩm</h3>
-				<div class="row-fluid">
-
+				<div class="row-fluid" id="table-sanpham">
 					<c:if test="${products.size()>0}">
 						<ul class="thumbnails">
 							<c:forEach var="item" items="${products}" varStatus="loop">
 								<li class="span4">
 									<div class="thumbnail">
 										<a href="product_details.html" class="overlay"></a>
-										<a class="zoomTool" href="product_details.html" title="add to cart"><span
+										<a class="zoomTool" href="<c:url value="/chi-tiet-san-pham/${item.id}"/>" title="add to cart"><span
 												class="icon-search"></span> QUICK VIEW</a>
-										<a href="<c:url value="/chi-tiet-san-pham/${item.id}"/>">
+										<a href="product_details.html">
 										<img src="<c:url value='/template/user/assets/img/${item.img}'/>" alt="">
 										</a>
 										<div class="caption cntr">
@@ -85,14 +84,43 @@
 			<div class="pagination">
 				<a href="#">&laquo;</a>
 				<c:forEach var="item" begin="1" end="${paginate.totalPage}" varStatus="loop">
-					<c:if test="${(loop.index) == paginate.page}">
+					<%-- <c:if test="${(loop.index) == paginate.page}">
 						<a href="<c:url value="/loai-san-pham/${idCategory}/${loop.index}"/>" class="active">${loop.index}</a>	
 					</c:if>
 					<c:if test="${(loop.index) != paginate.page}">
 						<a href="<c:url value="/loai-san-pham/${idCategory}/${loop.index}"/>">${loop.index}</a>
-					</c:if>		
+					</c:if> --%> 
+					<c:choose>
+						<c:when test="${item ==1}">
+							<a class="paging-item active" href="#" >${item}</a>
+						</c:when>
+						<c:otherwise>
+							<a class="paging-item" href="#" >${item}</a>
+						</c:otherwise>
+					</c:choose>
 				</c:forEach>
 				<a href="#">&raquo;</a>
 			</div>
+			<content tag="script">
+			<script >
+				 $("body").on("click",".paging-item",function(){		
+					var currentPage=$(this).text();
+					alert(currentPage);
+					$.ajax({
+						url:"/WebsiteMVC/api/loai-san-pham/${idCategory}",
+						type:"GET",
+						data:{
+							currentPage : currentPage,
+						},
+					    /* dataType: 'json', */
+						success: function (result){
+							var tbody = $("#table-sanpham");
+							tbody.empty();
+							tbody.append(result)
+						}
+					})
+				})
+			</script>
+			</content>
 		</body>
 		</html>

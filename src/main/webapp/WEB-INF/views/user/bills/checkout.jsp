@@ -14,23 +14,13 @@ Body Section
 				<div id="sidebar" class="span3">
 					<div class="well well-small">
 						<ul class="nav nav-list">
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a>
-							</li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a>
-							</li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-							<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry &
-									Watches</a></li>
+							<c:forEach var="item" items="${categorys}">
+								<li><a href='<c:url value="/loai-san-pham/${item.id}"/>'><span class="icon-chevron-right"></span>${item.name}</a></li>	
+							</c:forEach>
 							<li style="border:0"> &nbsp;</li>
-							<li> <a class="totalInCart" href="cart.html"><strong>Total Amount <span
+							<li> <a class="totalInCart" href="cart.html"><strong title="Tổng Tiền">Total Amount<span
 											class="badge badge-warning pull-right"
-											style="line-height:18px;">$448.42</span></strong></a></li>
+											style="line-height:18px;"><fmt:formatNumber type="number" groupingUsed="true" value="${TotalPriceCart}"/>₫</span></strong></a></li>
 						</ul>
 					</div>
 
@@ -93,36 +83,36 @@ Body Section
 					</ul>
 					<hr class="soft" />
 					<div class="well">
-						<form class="form-horizontal">
+						<form:form class="form-horizontal" action="CheckOut" method="post" modelAttribute="bills">
 							<h3 title="Your Billing Details">Thanh Toán Đơn Hàng</h3>
 							<div class="control-group">
 								<label class="control-label">Họ Và Tên <sup>*</sup></label>
 								<div class="controls">
-									<input type="text" placeholder="Mời Nhập Họ Và Tên">
+									<form:input type="text" placeholder="Mời Nhập Họ Và Tên" path="display_name"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">Email <sup>*</sup></label>
 								<div class="controls">
-									<input type="text" placeholder="Mời Bạn Nhập Email">
+									<form:input type="text" placeholder="Mời Bạn Nhập Email" path="email"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">Liên Hệ <sup>*</sup></label>
 								<div class="controls">
-									<input type="text" placeholder=" Mời Nhập Số Điện Thoại">
+									<form:input type="text" placeholder=" Mời Nhập Số Điện Thoại" path="phone"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">Địa Chỉ <sup>*</sup></label>
 								<div class="controls">
-									<textarea type="text" placeholder="Nhập Địa Chỉ Cụ Thể"></textarea>
+									<form:textarea type="text" placeholder="Nhập Địa Chỉ Cụ Thể" path="address"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">Ghi Chú <sup>*</sup></label>
 								<div class="controls">
-									<textarea type="text" placeholder="Mời Bạn Nhập Ghi Chú"></textarea>
+									<form:textarea type="text" placeholder="Mời Bạn Nhập Ghi Chú" path="note"/>
 								</div>
 							</div>
 							<div class="control-group">
@@ -131,7 +121,7 @@ Body Section
 										class="shopBtn exclusive">
 								</div>
 							</div>
-						</form>
+						</form:form>
 					</div>
 
 

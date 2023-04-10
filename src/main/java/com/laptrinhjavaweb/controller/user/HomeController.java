@@ -25,15 +25,21 @@ public class HomeController extends BaseController{
 	
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
 	public ModelAndView homePage() {
-		mvShare.setViewName("user/home");
 		mvShare.addObject("slides", slidesService.findAll());
-		mvShare.addObject("categorys", categorysService.findAll());
 		mvShare.addObject("FeaturedProducts", productsService.findAllFeaturedProducts());
+		mvShare.setViewName("user/home");
+//		mvShare.setViewName("user/account/forget_password");
 		return mvShare;
 	}
 
 	@RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
 	public ModelAndView accessDenied() {
 		return new ModelAndView("redirect:/dang-nhap?accessDenied");
+	}
+	
+	@RequestMapping(value = "/lien-he", method = RequestMethod.GET)
+	public ModelAndView Contact() {
+		mvShare.setViewName("user/contact");
+		return mvShare;
 	}
 }

@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import com.laptrinhjavaweb.converter.ProductsConverter;
 import com.laptrinhjavaweb.entity.ColorsEntity;
 import com.laptrinhjavaweb.entity.ProductsEntity;
 import com.laptrinhjavaweb.model.dto.ProductsDto;
 import com.laptrinhjavaweb.model.response.FeaturedProducts;
+import com.laptrinhjavaweb.model.response.ProductsOfCategoryResponse;
 import com.laptrinhjavaweb.repository.ColorsRepository;
 import com.laptrinhjavaweb.repository.ProductsRepository;
 import com.laptrinhjavaweb.service.IProductsService;
@@ -73,16 +73,28 @@ public class ProductsService implements IProductsService{
 	}
 
 	@Override
-	public List<ProductsDto> findProductOfCategory(long id, Pageable pageable) {
+	public List<ProductsOfCategoryResponse> findProductOfCategory(long id, Pageable pageable) {
 		// TODO Auto-generated method stub
-		List<ProductsDto> productsModels = new ArrayList<>();
+		List<ProductsOfCategoryResponse> productsModels = new ArrayList<>();
 		Page<ProductsEntity> page = productsRepository.findByCategoryIdPaginate( id,pageable);
 		List<ProductsEntity> productsEntities = page.getContent();
 		for (ProductsEntity productsEntity : productsEntities) {
-			ProductsDto model = productsConverter.toModel(productsEntity);
+			/*ProductsDto model = productsConverter.toModel(productsEntity);*/
+			ProductsOfCategoryResponse response = new ProductsOfCategoryResponse();
+			response.setId(productsEntity.getId());
+			response.setName(productsEntity.getName());
+			response.setSizes(productsEntity.getSizes());
+			response.setPrice(productsEntity.getPrice());
+			response.setSale(productsEntity.getSale());
+			response.setTitle(productsEntity.getTitle());
+			response.setHighlight(productsEntity.getHighlight());
+			response.setNewproduct(productsEntity.getNewproduct());
+			response.setDetail(productsEntity.getDetail());
 			ColorsEntity colorsEntity = productsEntity.getColorsEntities().get(0);
-			model.setImg(colorsEntity.getImg());
-			productsModels.add(model);
+			response.setImg(colorsEntity.getImg());
+			response.setNameColor(colorsEntity.getName());
+			response.setCodeColor(colorsEntity.getCode());
+			productsModels.add(response);
 		}
 		return productsModels;
 	}
@@ -111,5 +123,27 @@ public class ProductsService implements IProductsService{
 		List<ProductsDto> productsModels = new ArrayList<>();
 		List<ProductsEntity> productsEntities = productsRepository.findByCategoryEntity_Id(id);
 		return productsModels;
+	}
+
+	@Override
+	public List<ProductsDto> searchProduct(String name,Pageable pageable) {
+		// TODO Auto-generated method stub
+		List<ProductsDto> productsDtos = new ArrayList<>();
+		Page<ProductsEntity> page = productsRepository.searchProduct(name, pageable);
+		List<ProductsEntity> productsEntities = page.getContent();
+		for (ProductsEntity productsEntity : productsEntities) {
+			ProductsDto productsDto = productsConverter.toModel(productsEntity);
+			ColorsEntity colorsEntity = productsEntity.getColorsEntities().get(0);
+			productsDto.setImg(colorsEntity.getImg());
+			productsDtos.add(productsDto);
+		}
+		return productsDtos;
+	}
+
+	@Override
+	public int getTotalItems(String name) {
+		// TODO Auto-generated method stub
+		int toTalItem = productsRepository.getTotalItems(name);
+		return toTalItem;
 	}
 }

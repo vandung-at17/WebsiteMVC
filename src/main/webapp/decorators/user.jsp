@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
+<c:url var="SerchAPI" value="/tim-kiem?key=" />
         <!DOCTYPE html>
-        <html lang="en">
+        <html>
 
         <head>
-            <meta charset="UTF-8">
             <title>Twitter Bootstrap shopping cart</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content="">
@@ -56,7 +56,7 @@
                     <script src="<c:url value='/template/user/assets/js/jquery.scrollTo-1.4.3.1-min.js'/>"></script>
                     <!-- <script src="assets/js/shop.js"></script> -->
                     <script src="<c:url value='/template/user/assets/js/shop.js'/>"></script>
-                    
+                    <script src="<c:url value='/template/user/assets/js/ajax.js'/>"></script>
                     <dec:getProperty property="page.script"></dec:getProperty>
         </body>
         </html>

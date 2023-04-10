@@ -18,8 +18,6 @@
 						<c:forEach var="item" items="${categorys}">
 							<li><a href='<c:url value="/loai-san-pham/${item.id}"/>'><span class="icon-chevron-right"></span>${item.name}</a></li>	
 						</c:forEach>
-						<li><a href="products.html"><span class="icon-circle-blank"></span>Fashion</a></li>
-						<li><a href="products.html"><span class="icon-circle-blank"></span>Watches</a></li>
 						<li style="border:0"> &nbsp;</li>
 						<li> <a class="totalInCart" href="cart.html"><strong title="Tổng Tiền">Total Amount<span
 										class="badge badge-warning pull-right"

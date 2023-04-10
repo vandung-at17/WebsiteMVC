@@ -18,7 +18,7 @@ Body Section
 					</ul>
 					<div class="well well-small">
 						<h1>
-							Check Out
+							Giỏ Hàng
 							<small class="pull-right"> ${Cart.size()} Items are in the cart </small>
 						</h1>
 						<hr class="soften" />
@@ -57,7 +57,7 @@ Body Section
 											</button>
 										</td>
 										<td>
-											<a href="<c:url value=" /DeleteCart/${item.key}" />" class="btn btn-mini btn-danger" type="button">
+											<a href="<c:url value="/DeleteCart/${item.key}"/>" class="btn btn-mini btn-danger" type="button">
 												<span class="icon-remove"></span>
 											</a>
 										</td>

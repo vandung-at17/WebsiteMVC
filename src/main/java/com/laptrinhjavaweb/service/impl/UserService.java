@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.service.impl;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,6 +33,23 @@ public class UserService implements  IUserService{
 	public UserDto CheckAccountLogin(UserLoginRequest userLoginRequest) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public UserDto findOneByEmail(String email) {
+		// TODO Auto-generated method stub
+		UserEntity userEntity = userRepository.findOneByEmailAndStatus(email, 1);
+		UserDto userDto = userConverter.toModel(userEntity);
+		return userDto;
+	}
+
+	@Override
+	@Transactional
+	public void updatePassWordNew(String passwordNew, String gmail) {
+		// TODO Auto-generated method stub
+		String passWord = BCrypt.hashpw(passwordNew, BCrypt.gensalt(12));
+		UserEntity userEntity = userRepository.findOneByEmailAndStatus(gmail, 1);
+	    userRepository.updatePassWordOfEmail(passWord, userEntity.getId());
 	}
 	
 }

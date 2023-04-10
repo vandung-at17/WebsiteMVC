@@ -1,3 +1,4 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp" %>
 <%@page import="com.laptrinhjavaweb.util.SecurityUtils" %>
 	<!-- 
@@ -78,7 +79,7 @@ Navigation Bar Section
 								<li class=""><a href="general.html">General Content</a></li>
 							</ul>
 							<form action="#" class="navbar-search pull-left">
-								<input type="text" placeholder="Search" class="search-query span2">
+								<input type="text" placeholder="Search" class="search-query span2" id = "SearchProduct">
 							</form>
 							<ul class="nav pull-right">
 								<li class="dropdown">
