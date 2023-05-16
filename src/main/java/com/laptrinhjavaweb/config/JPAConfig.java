@@ -46,7 +46,10 @@ public class JPAConfig {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//		dataSource.setUrl("jdbc:mysql://root:sEISzaiYOBbyKpLKg592@containers-us-west-69.railway.app:6881/railway");
+//		dataSource.setUsername("root");
+//		dataSource.setPassword("sEISzaiYOBbyKpLKg592");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/websitespringmvc");
 		dataSource.setUsername("root");
 		dataSource.setPassword("02050707");

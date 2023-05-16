@@ -8,6 +8,6 @@ import com.laptrinhjavaweb.entity.BillsEntity;
 
 @Repository
 public interface BillsRepository extends JpaRepository<BillsEntity, Long> {
-	@Query(value = "SELECT max(b.id) FROM websitespringmvc.bills as b", nativeQuery = true)
+	@Query(value = "SELECT max(b.id) FROM bills as b", nativeQuery = true)
 	long getIDLastBills();
 }

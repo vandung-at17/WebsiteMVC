@@ -76,3 +76,17 @@ values('nguyenvanb@gmail.com','$2a$10$/RUbuT9KIqk6f8enaTQiLOXzhnUkiwEJRdtzdrMXXw
 INSERT INTO user_role(userid,roleid) VALUES (1,1);
 INSERT INTO user_role(userid,roleid) VALUES (2,2);
 INSERT INTO user_role(userid,roleid) VALUES (3,2);
+
+INSERT INTO `railway`.`slides` (`id`, `caption`, `content`, `img`) VALUES ('1', 'Twitter Bootstrap cart', 'Very easy to integrate and expand.', 'carousel3.png');
+INSERT INTO `railway`.`slides` (`id`, `caption`, `content`, `img`) VALUES ('2', 'Bootstrap templates integration', 'Compitable to many more opensource cart', 'bootstrap-templates.png');
+INSERT INTO `railway`.`slides` (`id`, `caption`, `content`, `img`) VALUES ('3', 'Bootstrap shopping cart', 'Very clean simple to use', 'bootstrap_free-ecommerce.png');
+INSERT INTO `railway`.`slides` (`id`, `caption`, `content`, `img`) VALUES ('4', 'Bootstrap Ecommerce template', 'Highly Google seo friendly', 'carousel1.png');
+INSERT INTO `railway`.`slides` (`id`, `img`) VALUES ('5', 'anh-bia-si-phu-kien-trang-suc-1.jpg');
+
+INSERT INTO `railway`.`menus` (`id`, `name`, `url`) VALUES ('1', 'Trang Chủ', '/trang-chu');
+INSERT INTO `railway`.`menus` (`id`, `name`, `url`) VALUES ('2', 'Sản Phẩm', '/san-pham');
+INSERT INTO `railway`.`menus` (`id`, `name`, `url`) VALUES ('3', 'So Sánh', '/so-sanh');
+INSERT INTO `railway`.`menus` (`id`, `name`, `url`) VALUES ('4', 'Giỏ Hàng', '/gio-hang');
+INSERT INTO `railway`.`menus` (`id`, `name`) VALUES ('5', 'Bài Viết');
+INSERT INTO `railway`.`menus` (`id`, `name`, `url`) VALUES ('6', 'Liên Hệ', '/lien-he');
+
